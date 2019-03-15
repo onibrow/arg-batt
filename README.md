@@ -17,3 +17,9 @@ Tasks
 Useful Links:
 
 [Photon](https://store.particle.io/products/photon)
+
+## Possibilities
+
+* External power - through maybe a barrel jack to provide external power to the entire board, so that the photon's uUSB isn't stressed
+* Push buttons for Photon configuration - allows external user to set up and start different testing procedures
+* Accurate ammeter for measuring current.
