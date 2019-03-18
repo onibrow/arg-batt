@@ -7189,6 +7189,8 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <part name="TP1" library="scono" deviceset="TEST_POINT" device=""/>
 <part name="TP2" library="scono" deviceset="TEST_POINT" device=""/>
 <part name="J1" library="scono" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1" value="UART"/>
+<part name="J2" library="scono" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1" value="batt"/>
+<part name="SUPPLY4" library="scono" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7270,6 +7272,13 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <attribute name="VALUE" x="78.74" y="101.854" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="78.74" y="112.268" size="1.778" layer="95" font="vector"/>
 </instance>
+<instance part="J2" gate="G$1" x="48.26" y="86.36" smashed="yes">
+<attribute name="VALUE" x="45.72" y="81.534" size="1.778" layer="96" font="vector"/>
+<attribute name="NAME" x="45.72" y="91.948" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="SUPPLY4" gate="GND" x="58.42" y="83.82" smashed="yes">
+<attribute name="VALUE" x="57.15" y="81.28" size="1.016" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -7306,6 +7315,11 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <wire x1="71.12" y1="119.38" x2="71.12" y2="116.84" width="0.1524" layer="91"/>
 <label x="71.12" y="114.3" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="2"/>
+<wire x1="55.88" y1="88.9" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
+<label x="58.42" y="88.9" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -7324,6 +7338,11 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <wire x1="160.02" y1="83.82" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
 <junction x="170.18" y="83.82"/>
+</segment>
+<segment>
+<pinref part="J2" gate="G$1" pin="1"/>
+<wire x1="55.88" y1="86.36" x2="58.42" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="SUPPLY4" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="N$6" class="0">
