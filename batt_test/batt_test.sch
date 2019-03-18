@@ -2600,6 +2600,21 @@ part number 2062-2P from STA</description>
 <pad name="2" x="-1.27" y="-5.85" drill="0.8"/>
 <pad name="1" x="1.27" y="-5.85" drill="0.8"/>
 </package>
+<package name="20MMCOINCELL">
+<hole x="-7.239" y="0" drill="3.556"/>
+<hole x="8.001" y="0" drill="3.556"/>
+<pad name="NEG" x="0" y="2.9972" drill="1.6256"/>
+<pad name="POS" x="-13.081" y="0" drill="1.6256"/>
+<wire x1="-4.572" y1="4.826" x2="4.318" y2="4.826" width="0.127" layer="21"/>
+<wire x1="4.318" y1="4.826" x2="4.318" y2="2.921" width="0.127" layer="21"/>
+<wire x1="4.318" y1="2.921" x2="11.303" y2="2.921" width="0.127" layer="21"/>
+<wire x1="11.303" y1="2.921" x2="11.303" y2="-2.667" width="0.127" layer="21"/>
+<wire x1="11.303" y1="-2.667" x2="-15.494" y2="-2.667" width="0.127" layer="21"/>
+<wire x1="-15.494" y1="-2.667" x2="-15.494" y2="2.794" width="0.127" layer="21"/>
+<wire x1="-15.494" y1="2.794" x2="-4.572" y2="2.794" width="0.127" layer="21"/>
+<wire x1="-4.572" y1="2.794" x2="-4.572" y2="4.826" width="0.127" layer="21"/>
+<text x="-14" y="4" size="0.7" layer="25" font="vector">&gt;NAME</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X02" urn="urn:adsk.eagle:package:38039/1" type="box">
@@ -3057,6 +3072,15 @@ part number 2062-2P from STA</description>
 <text x="-2.54" y="5.588" size="1.778" layer="95" font="vector">&gt;NAME</text>
 <pin name="1" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="20MMCOINCELL">
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<pin name="POS" x="0" y="5.08" visible="off" length="short" rot="R270"/>
+<pin name="NEG" x="0" y="-7.62" visible="off" length="short" rot="R90"/>
+<text x="-7.62" y="-7.62" size="3.2512" layer="95" font="vector" rot="R90">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4457,6 +4481,23 @@ For A106146CT-ND or similar</description>
 <technology name="">
 <attribute name="PROD_ID" value="CONN-13700"/>
 </technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="2020COINCELL" prefix="B">
+<description>https://www.digikey.com/product-detail/en/1065/36-1065-ND/278884?utm_campaign=buynow&amp;WT.z_cid=ref_octopart_dkc_buynow&amp;utm_medium=aggregator&amp;curr=usd&amp;site=us&amp;utm_source=octopart</description>
+<gates>
+<gate name="G$1" symbol="20MMCOINCELL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="20MMCOINCELL">
+<connects>
+<connect gate="G$1" pin="NEG" pad="NEG"/>
+<connect gate="G$1" pin="POS" pad="POS"/>
+</connects>
+<technologies>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -7186,11 +7227,12 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <part name="R6" library="BEST_Custom" deviceset="R-US_" device="R0402" value="330"/>
 <part name="SUPPLY2" library="scono" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="scono" deviceset="GND" device=""/>
-<part name="TP1" library="scono" deviceset="TEST_POINT" device=""/>
-<part name="TP2" library="scono" deviceset="TEST_POINT" device=""/>
+<part name="B-" library="scono" deviceset="TEST_POINT" device=""/>
+<part name="POS" library="scono" deviceset="TEST_POINT" device=""/>
 <part name="J1" library="scono" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1" value="UART"/>
 <part name="J2" library="scono" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1" value="batt"/>
 <part name="SUPPLY4" library="scono" deviceset="GND" device=""/>
+<part name="B1" library="scono" deviceset="2020COINCELL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7262,10 +7304,10 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <instance part="SUPPLY3" gate="GND" x="81.28" y="78.74" smashed="yes">
 <attribute name="VALUE" x="80.01" y="76.2" size="1.016" layer="96"/>
 </instance>
-<instance part="TP1" gate="G$1" x="86.36" y="127" smashed="yes" rot="R90">
+<instance part="B-" gate="G$1" x="86.36" y="127" smashed="yes" rot="R90">
 <attribute name="NAME" x="82.55" y="123.19" size="1.778" layer="104" rot="R90"/>
 </instance>
-<instance part="TP2" gate="G$1" x="71.12" y="127" smashed="yes" rot="R90">
+<instance part="POS" gate="G$1" x="71.12" y="127" smashed="yes" rot="R90">
 <attribute name="NAME" x="67.31" y="123.19" size="1.778" layer="104" rot="R90"/>
 </instance>
 <instance part="J1" gate="G$1" x="81.28" y="106.68" smashed="yes">
@@ -7278,6 +7320,9 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 </instance>
 <instance part="SUPPLY4" gate="GND" x="58.42" y="83.82" smashed="yes">
 <attribute name="VALUE" x="57.15" y="81.28" size="1.016" layer="96"/>
+</instance>
+<instance part="B1" gate="G$1" x="81.28" y="88.9" smashed="yes">
+<attribute name="NAME" x="73.66" y="81.28" size="3.2512" layer="95" font="vector" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -7294,7 +7339,7 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <label x="99.06" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="TP1" gate="G$1" pin="P$1"/>
+<pinref part="B-" gate="G$1" pin="P$1"/>
 <wire x1="86.36" y1="119.38" x2="86.36" y2="116.84" width="0.1524" layer="91"/>
 <label x="86.36" y="114.3" size="1.778" layer="95"/>
 </segment>
@@ -7309,9 +7354,10 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <label x="96.52" y="93.98" size="1.778" layer="95"/>
 <wire x1="93.98" y1="96.52" x2="81.28" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="96.52" x2="81.28" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="B1" gate="G$1" pin="POS"/>
 </segment>
 <segment>
-<pinref part="TP2" gate="G$1" pin="P$1"/>
+<pinref part="POS" gate="G$1" pin="P$1"/>
 <wire x1="71.12" y1="119.38" x2="71.12" y2="116.84" width="0.1524" layer="91"/>
 <label x="71.12" y="114.3" size="1.778" layer="95"/>
 </segment>
@@ -7343,6 +7389,10 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <pinref part="J2" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="86.36" x2="58.42" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="SUPPLY3" gate="GND" pin="GND"/>
+<pinref part="B1" gate="G$1" pin="NEG"/>
 </segment>
 </net>
 <net name="N$6" class="0">

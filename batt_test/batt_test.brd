@@ -186,9 +186,9 @@
 <plain>
 <wire x1="0" y1="2.5" x2="2.5" y2="0" width="0" layer="20"/>
 <wire x1="2.5" y1="0" x2="42.5" y2="0" width="0" layer="20"/>
-<wire x1="42.5" y1="0" x2="45" y2="2.5" width="0" layer="20"/>
-<wire x1="45" y1="2.5" x2="45" y2="42.5" width="0" layer="20"/>
-<wire x1="45" y1="42.5" x2="42.5" y2="45" width="0" layer="20"/>
+<wire x1="42.5" y1="0" x2="50.5" y2="2.5" width="0" layer="20"/>
+<wire x1="50.5" y1="2.5" x2="50.5" y2="42.5" width="0" layer="20"/>
+<wire x1="50.5" y1="42.5" x2="42.5" y2="45" width="0" layer="20"/>
 <wire x1="42.5" y1="45" x2="2.5" y2="45" width="0" layer="20"/>
 <wire x1="2.5" y1="45" x2="0" y2="42.5" width="0" layer="20"/>
 <wire x1="0" y1="42.5" x2="0" y2="2.5" width="0" layer="20"/>
@@ -200,9 +200,10 @@
 <wire x1="6.908" y1="29.008" x2="6.908" y2="26.087" width="0.1524" layer="21"/>
 <wire x1="1.32" y1="26.087" x2="1.32" y2="27.992" width="0.1524" layer="21"/>
 <wire x1="1.32" y1="33.453" x2="1.32" y2="31.548" width="0.1524" layer="21"/>
-<text x="7" y="10" size="1" layer="27" font="vector" rot="R90">Arias Research Group
+<text x="7" y="10" size="1" layer="21" font="vector" rot="R90">Arias Research Group
 Board Design - S. Ono
 Battery Testing Board</text>
+<text x="41.5" y="36" size="0.8" layer="21" font="vector" align="bottom-right">NEG</text>
 </plain>
 <libraries>
 <library name="scono">
@@ -355,6 +356,21 @@ A106146CT-ND or similar.</description>
 <hole x="0" y="0" drill="4.6355"/>
 <circle x="0" y="0" radius="2.54" width="0.127" layer="39"/>
 </package>
+<package name="20MMCOINCELL">
+<hole x="-7.239" y="0" drill="3.556"/>
+<hole x="8.001" y="0" drill="3.556"/>
+<pad name="NEG" x="0" y="2.9972" drill="1.6256"/>
+<pad name="POS" x="-13.081" y="0" drill="1.6256"/>
+<wire x1="-4.572" y1="4.826" x2="4.318" y2="4.826" width="0.127" layer="21"/>
+<wire x1="4.318" y1="4.826" x2="4.318" y2="2.921" width="0.127" layer="21"/>
+<wire x1="4.318" y1="2.921" x2="11.303" y2="2.921" width="0.127" layer="21"/>
+<wire x1="11.303" y1="2.921" x2="11.303" y2="-2.667" width="0.127" layer="21"/>
+<wire x1="11.303" y1="-2.667" x2="-15.494" y2="-2.667" width="0.127" layer="21"/>
+<wire x1="-15.494" y1="-2.667" x2="-15.494" y2="2.794" width="0.127" layer="21"/>
+<wire x1="-15.494" y1="2.794" x2="-4.572" y2="2.794" width="0.127" layer="21"/>
+<wire x1="-4.572" y1="2.794" x2="-4.572" y2="4.826" width="0.127" layer="21"/>
+<text x="-14" y="4" size="0.7" layer="25" font="vector">&gt;NAME</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X02" urn="urn:adsk.eagle:package:38039/1" type="box">
@@ -398,7 +414,7 @@ CONN_02
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="scono">
+<designrules name="scono *">
 <description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 Die Standard-Design-Rules sind so gewählt, dass sie für 
@@ -430,9 +446,9 @@ Combination of BAC and AC</description>
 <param name="msDrill" value="15mil"/>
 <param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.125"/>
-<param name="rvPadTop" value="0.1"/>
+<param name="rvPadTop" value="0.25"/>
 <param name="rvPadInner" value="0.1"/>
-<param name="rvPadBottom" value="0.1"/>
+<param name="rvPadBottom" value="0.25"/>
 <param name="rvViaOuter" value="0.25"/>
 <param name="rvViaInner" value="0.25"/>
 <param name="rvMicroViaOuter" value="0.25"/>
@@ -617,11 +633,11 @@ Combination of BAC and AC</description>
 <attribute name="PIE-INT-REF-NUM" value="RESISTOR-GENERIC" x="5.765" y="32.818" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="4.622" y="31.548" size="0.508" layer="27" font="vector"/>
 </element>
-<element name="TP1" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="20" smashed="yes">
+<element name="B-" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="20" smashed="yes">
 <attribute name="NAME" x="39.87" y="21.84" size="0.8128" layer="25" font="vector" rot="R180"/>
 </element>
-<element name="TP2" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="28" smashed="yes">
-<attribute name="NAME" x="39.87" y="29.84" size="0.8128" layer="25" font="vector" rot="R180"/>
+<element name="POS" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="28" smashed="yes">
+<attribute name="NAME" x="36" y="36" size="0.8" layer="25" font="vector"/>
 </element>
 <element name="J1" library="scono" package="1X02" package3d_urn="urn:adsk.eagle:package:38039/1" value="UART" x="38" y="15" smashed="yes" rot="R270">
 <attribute name="NAME" x="39.397" y="16.27" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
@@ -630,17 +646,20 @@ Combination of BAC and AC</description>
 <element name="U$1" library="scono" package="4-40-HOLE" value="" x="5" y="5" smashed="yes"/>
 <element name="U$2" library="scono" package="4-40-HOLE" value="" x="40" y="5" smashed="yes"/>
 <element name="U$3" library="scono" package="4-40-HOLE" value="" x="5" y="40" smashed="yes"/>
-<element name="J2" library="scono" package="1X02" package3d_urn="urn:adsk.eagle:package:38039/1" value="batt" x="37.5" y="34.5" smashed="yes" rot="R270">
-<attribute name="NAME" x="38.897" y="35.77" size="0.6096" layer="25" font="vector" ratio="20" rot="R270"/>
-<attribute name="VALUE" x="35.468" y="35.77" size="0.6096" layer="27" font="vector" ratio="20" rot="R270"/>
+<element name="J2" library="scono" package="1X02" package3d_urn="urn:adsk.eagle:package:38039/1" value="batt" x="40" y="34.5" smashed="yes" rot="R180">
+<attribute name="NAME" x="41.27" y="33.103" size="0.6096" layer="25" font="vector" ratio="20" rot="R180"/>
 </element>
+<element name="B1" library="scono" package="20MMCOINCELL" value="2020COINCELL" x="47" y="28" smashed="yes" rot="R90">
+<attribute name="NAME" x="43" y="14" size="0.7" layer="25" font="vector" rot="R90"/>
+</element>
+<element name="U$4" library="scono" package="4-40-HOLE" value="" x="40" y="40" smashed="yes"/>
 </elements>
 <signals>
 <signal name="B-">
 <contactref element="R1" pad="2"/>
 <contactref element="U1" pad="A5"/>
 <contactref element="U1" pad="DAC"/>
-<contactref element="TP1" pad="1"/>
+<contactref element="B-" pad="1"/>
 <wire x1="38.21" y1="23.39" x2="38.21" y2="20.71" width="0.8" layer="1"/>
 <wire x1="38.21" y1="20.71" x2="37.5" y2="20" width="0.254" layer="1"/>
 <wire x1="37.5" y1="20" x2="37.44" y2="19.94" width="0.254" layer="1"/>
@@ -650,13 +669,19 @@ Combination of BAC and AC</description>
 <signal name="B+">
 <contactref element="R1" pad="1"/>
 <contactref element="U1" pad="A3"/>
-<contactref element="TP2" pad="1"/>
+<contactref element="POS" pad="1"/>
 <wire x1="32.46" y1="27.56" x2="37.06" y2="27.56" width="0.8" layer="1"/>
 <wire x1="37.06" y1="27.56" x2="37.5" y2="28" width="0.254" layer="1"/>
 <wire x1="37.5" y1="28" x2="37.5" y2="25.8" width="0.8" layer="1"/>
 <wire x1="37.5" y1="25.8" x2="38.21" y2="25.09" width="0.8" layer="1"/>
 <contactref element="J2" pad="2"/>
-<wire x1="37.5" y1="31.96" x2="37.5" y2="28" width="0.8" layer="1"/>
+<contactref element="B1" pad="POS"/>
+<wire x1="38.21" y1="25.09" x2="41.41" y2="25.09" width="0.8" layer="1"/>
+<wire x1="41.41" y1="25.09" x2="42.5" y2="24" width="0.8" layer="1"/>
+<wire x1="42.5" y1="24" x2="42.5" y2="19.419" width="0.8" layer="1"/>
+<wire x1="42.5" y1="19.419" x2="47" y2="14.919" width="0.8" layer="1"/>
+<wire x1="37.5" y1="28" x2="37.46" y2="28" width="0.8" layer="1"/>
+<wire x1="37.46" y1="28" x2="37.46" y2="34.5" width="0.8" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="U1" pad="GND"/>
@@ -675,7 +700,11 @@ Combination of BAC and AC</description>
 <via x="2.082" y="25.071" extent="1-16" drill="0.4064"/>
 <polygon width="0.1524" layer="16">
 <vertex x="0.5" y="37"/>
-<vertex x="41" y="37"/>
+<vertex x="44" y="37"/>
+<vertex x="44" y="31"/>
+<vertex x="46" y="31"/>
+<vertex x="46" y="26"/>
+<vertex x="41" y="26"/>
 <vertex x="41" y="17.5"/>
 <vertex x="35" y="17.5"/>
 <vertex x="35" y="5"/>
@@ -684,6 +713,7 @@ Combination of BAC and AC</description>
 <vertex x="0.5" y="23"/>
 </polygon>
 <contactref element="J2" pad="1"/>
+<contactref element="B1" pad="NEG"/>
 </signal>
 <signal name="N$6">
 <contactref element="D1" pad="A"/>
