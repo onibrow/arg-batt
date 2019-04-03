@@ -2,6 +2,11 @@
 
 ### Seiya Ono Sp'19
 
+TODO: 
+* Move up Photon to edge of board
+* Add a switch to disconnect the battery
+* Get documentation (email) and get IDE up to flash
+
 From Dr. Evans:
 
 Idea is to carry out multi-cycle testing of a Panasonic coin cell (about 3 million cycles). With the present arrangement (a Photon mounted on a breadboard) we have reached ~ 2 million cycles and still going. The design connects the DAC output of the Photon (nominally 0 – 3.3V DC) to the positive terminal of the cell holder via a 10 Ohm resistor. The negative terminal of the cell holder is connected to GND on the Photon. Wires run from either side of the resistor to the analog input connections on the Photon so that the current can be determined from the voltage drop across the resistor (A3 to A5) and the cell voltage determined by one of the connections (A3). We have software that brings the DAC output to greater than the cell voltage during charge and lowers it to below cell voltage during discharge. A cycle takes approximately 400 ms and the data are relayed via Webhook to ThingSpeak (Math Works’ version of the cloud) for plotting/analysis.
