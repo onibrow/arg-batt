@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.2">
+<eagle version="9.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -203,7 +203,6 @@
 <text x="7" y="9.5" size="1" layer="21" font="vector" rot="R90">Arias Research Group
 Board Design - S. Ono
 Battery Testing Board</text>
-<text x="41.5" y="35.5" size="0.8" layer="21" font="vector" align="bottom-right">NEG</text>
 <text x="18" y="41.5" size="1" layer="21" font="vector" rot="SR180" align="bottom-center">POS</text>
 <text x="26" y="41.5" size="1" layer="21" font="vector" rot="SR180" align="bottom-center">GND</text>
 <wire x1="16" y1="44" x2="16" y2="40" width="0.254" layer="21"/>
@@ -216,27 +215,12 @@ Battery Testing Board</text>
 <wire x1="24" y1="40" x2="24" y2="44" width="0.254" layer="21"/>
 <text x="43.5" y="11" size="1" layer="21" font="vector" rot="R90">ON</text>
 <text x="43.5" y="6" size="1" layer="21" font="vector" rot="R90">OFF</text>
+<text x="49" y="26" size="1.778" layer="21" font="vector" rot="R90">POS</text>
+<text x="49" y="18" size="1.778" layer="21" font="vector" rot="R90">NEG</text>
 </plain>
 <libraries>
 <library name="scono">
 <packages>
-<package name="R0603">
-<description>GoTo &lt;b&gt;Resistor&lt;/b&gt;
-
-&lt;p&gt;0603 SMD package&lt;/p&gt;
-
-&lt;p&gt;Typically default surface mount resistor used in PiE&lt;/p&gt;</description>
-<wire x1="-0.432" y1="-0.356" x2="0.432" y2="-0.356" width="0.1524" layer="51"/>
-<wire x1="0.432" y1="0.356" x2="-0.432" y2="0.356" width="0.1524" layer="51"/>
-<smd name="1" x="-0.85" y="0" dx="1" dy="1.1" layer="1"/>
-<smd name="2" x="0.85" y="0" dx="1" dy="1.1" layer="1"/>
-<text x="-1.27" y="0.889" size="0.508" layer="25" font="vector" ratio="10">&gt;NAME</text>
-<text x="-1.27" y="-1.016" size="0.508" layer="27" font="vector" align="top-left">&gt;VALUE</text>
-<rectangle x1="0.4318" y1="-0.4318" x2="0.8382" y2="0.4318" layer="51"/>
-<rectangle x1="-0.8382" y1="-0.4318" x2="-0.4318" y2="0.4318" layer="51"/>
-<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
-<rectangle x1="-1.905" y1="-0.762" x2="1.905" y2="0.762" layer="39"/>
-</package>
 <package name="PHOTON">
 <description>&lt;h3&gt;Plated Through Hole - 4 Pin&lt;/h3&gt;
 &lt;p&gt;Specifications:
@@ -343,21 +327,6 @@ A106146CT-ND or similar.</description>
 <hole x="0" y="0" drill="4.6355"/>
 <circle x="0" y="0" radius="2.54" width="0.127" layer="39"/>
 </package>
-<package name="20MMCOINCELL">
-<hole x="-7.239" y="0" drill="3.556"/>
-<hole x="8.001" y="0" drill="3.556"/>
-<pad name="NEG" x="0" y="2.9972" drill="1.6256"/>
-<pad name="POS" x="-13.081" y="0" drill="1.6256"/>
-<wire x1="-4.572" y1="4.826" x2="4.318" y2="4.826" width="0.127" layer="21"/>
-<wire x1="4.318" y1="4.826" x2="4.318" y2="2.921" width="0.127" layer="21"/>
-<wire x1="4.318" y1="2.921" x2="11.303" y2="2.921" width="0.127" layer="21"/>
-<wire x1="11.303" y1="2.921" x2="11.303" y2="-2.667" width="0.127" layer="21"/>
-<wire x1="11.303" y1="-2.667" x2="-15.494" y2="-2.667" width="0.127" layer="21"/>
-<wire x1="-15.494" y1="-2.667" x2="-15.494" y2="2.794" width="0.127" layer="21"/>
-<wire x1="-15.494" y1="2.794" x2="-4.572" y2="2.794" width="0.127" layer="21"/>
-<wire x1="-4.572" y1="2.794" x2="-4.572" y2="4.826" width="0.127" layer="21"/>
-<text x="-14" y="4" size="0.7" layer="25" font="vector">&gt;NAME</text>
-</package>
 <package name="1101M2S3CQE2">
 <pad name="1" x="0" y="9.398" drill="2.286" diameter="2.794" shape="square"/>
 <pad name="2" x="0" y="4.699" drill="2.286" diameter="2.794"/>
@@ -399,6 +368,19 @@ A106146CT-ND or similar.</description>
 <package name="TEST_POINT">
 <pad name="1" x="0" y="0" drill="1.016" diameter="1.6764"/>
 <text x="-1.5" y="1.5" size="0.7" layer="21">&gt;NAME</text>
+</package>
+<package name="R0805">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="51"/>
+<wire x1="-0.41" y1="-0.635" x2="0.41" y2="-0.635" width="0.1524" layer="51"/>
+<smd name="1" x="-0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
+<smd name="2" x="0.95" y="0" dx="1.3" dy="1.5" layer="1"/>
+<text x="-1.27" y="1.27" size="1.27" layer="25" font="vector" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-2.54" size="1.27" layer="27" font="vector">&gt;VALUE</text>
+<rectangle x1="0.4064" y1="-0.6985" x2="1.0564" y2="0.7015" layer="51"/>
+<rectangle x1="-1.0668" y1="-0.6985" x2="-0.4168" y2="0.7015" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.5001" x2="0.1999" y2="0.5001" layer="35"/>
+<rectangle x1="-2.159" y1="-0.889" x2="2.159" y2="0.889" layer="39"/>
 </package>
 </packages>
 </library>
@@ -608,17 +590,6 @@ Combination of BAC and AC</description>
 </pass>
 </autorouter>
 <elements>
-<element name="R1" library="scono" package="R0603" value="10R" x="38.21" y="23.74" smashed="yes" rot="R270">
-<attribute name="DESCRIPTION" value="RESISTOR, American symbol" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DISTRIBUTOR" value="DigiKey" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DISTRIBUTOR_PART_NUMBER" value="" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER" value="Rohm Semiconductor" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="39.099" y="25.01" size="0.508" layer="25" font="vector" ratio="10" rot="R270"/>
-<attribute name="NOTES" value="Cut Tape" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="PACKAGE" value="R0603" x="9" y="8.5" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="37.194" y="25.01" size="0.508" layer="27" font="vector" rot="R270" align="top-left"/>
-</element>
 <element name="U1" library="scono" package="PHOTON" value="PHOTON" x="22.3" y="21.98" smashed="yes" rot="R90">
 <attribute name="NAME" x="10.243" y="2.16" size="1.27" layer="25" font="vector" ratio="7" rot="R90"/>
 </element>
@@ -650,12 +621,9 @@ Combination of BAC and AC</description>
 <element name="B-" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="19.5" smashed="yes">
 <attribute name="NAME" x="39.87" y="21.34" size="0.8128" layer="25" font="vector" rot="R180"/>
 </element>
-<element name="POS" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="27.5" smashed="yes">
-<attribute name="NAME" x="36" y="35.5" size="0.8" layer="25" font="vector"/>
-</element>
+<element name="POS" library="scono" package="TEST_POINT-1206" value="TEST_POINT" x="37.5" y="27.5" smashed="yes"/>
 <element name="U$1" library="scono" package="4-40-HOLE" value="" x="5" y="5" smashed="yes"/>
 <element name="U$3" library="scono" package="4-40-HOLE" value="" x="5" y="39.5" smashed="yes"/>
-<element name="B1" library="scono" package="20MMCOINCELL" value="2020COINCELL" x="47" y="27.5" smashed="yes" rot="R90"/>
 <element name="U$4" library="scono" package="4-40-HOLE" value="" x="40" y="39.5" smashed="yes"/>
 <element name="U2" library="scono" package="1101M2S3CQE2" value="1101M2S3CQE2" x="38.5" y="5" smashed="yes">
 <attribute name="MANUFACTURER_PART_NUMBER" value="1101M2S3CQE2" x="38.5" y="5" size="1.778" layer="27" display="off"/>
@@ -664,37 +632,44 @@ Combination of BAC and AC</description>
 </element>
 <element name="B+" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="18" y="43" smashed="yes"/>
 <element name="TP2" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="26" y="43" smashed="yes"/>
+<element name="R1" library="scono" package="R0805" value="10R" x="37.5" y="24" smashed="yes" rot="R270">
+<attribute name="NAME" x="38.77" y="25.27" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
+<attribute name="PIE-INT-REF-NUM" value="RESISTOR-GENERIC" x="37.5" y="24" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="34.96" y="25.27" size="1.27" layer="27" font="vector" rot="R270"/>
+</element>
+<element name="TP1" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="44" y="28" smashed="yes"/>
+<element name="TP3" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="44" y="20" smashed="yes"/>
 </elements>
 <signals>
 <signal name="B-">
-<contactref element="R1" pad="2"/>
 <contactref element="U1" pad="A5"/>
 <contactref element="U1" pad="DAC"/>
 <contactref element="B-" pad="1"/>
-<wire x1="38.21" y1="22.89" x2="38.21" y2="20.21" width="0.8" layer="1"/>
-<wire x1="38.21" y1="20.21" x2="37.5" y2="19.5" width="0.254" layer="1"/>
 <wire x1="37.5" y1="19.5" x2="37.44" y2="19.44" width="0.254" layer="1"/>
 <wire x1="37.44" y1="19.44" x2="31.19" y2="19.44" width="0.8" layer="1"/>
 <wire x1="31.19" y1="19.44" x2="31.19" y2="21.98" width="0.8" layer="1"/>
+<contactref element="R1" pad="2"/>
+<wire x1="37.5" y1="23.05" x2="37.44" y2="22.99" width="0.8" layer="1"/>
+<wire x1="37.44" y1="22.99" x2="37.44" y2="19.44" width="0.8" layer="1"/>
 </signal>
 <signal name="B+">
-<contactref element="R1" pad="1"/>
-<contactref element="U1" pad="A3"/>
 <contactref element="POS" pad="1"/>
-<wire x1="31.19" y1="27.06" x2="37.06" y2="27.06" width="0.8" layer="1"/>
-<wire x1="37.06" y1="27.06" x2="37.5" y2="27.5" width="0.254" layer="1"/>
-<wire x1="37.5" y1="27.5" x2="37.5" y2="25.3" width="0.8" layer="1"/>
-<wire x1="37.5" y1="25.3" x2="38.21" y2="24.59" width="0.8" layer="1"/>
-<contactref element="B1" pad="POS"/>
-<wire x1="38.21" y1="24.59" x2="41.41" y2="24.59" width="0.8" layer="1"/>
-<wire x1="41.41" y1="24.59" x2="42.5" y2="23.5" width="0.8" layer="1"/>
-<wire x1="42.5" y1="23.5" x2="42.5" y2="18.919" width="0.8" layer="1"/>
-<wire x1="42.5" y1="18.919" x2="47" y2="14.419" width="0.8" layer="1"/>
 <contactref element="B+" pad="1"/>
 <wire x1="18" y1="43" x2="18" y2="35.5" width="0.5" layer="1"/>
-<wire x1="18" y1="35.5" x2="26" y2="27.5" width="0.5" layer="1"/>
-<wire x1="26" y1="27.5" x2="30.75" y2="27.5" width="0.5" layer="1"/>
-<wire x1="30.75" y1="27.5" x2="31.19" y2="27.06" width="0.5" layer="1"/>
+<contactref element="R1" pad="1"/>
+<contactref element="U1" pad="A2"/>
+<wire x1="18" y1="35.5" x2="23.9" y2="29.6" width="0.5" layer="1"/>
+<wire x1="23.9" y1="29.6" x2="31.19" y2="29.6" width="0.5" layer="1"/>
+<wire x1="31.19" y1="29.6" x2="35.4" y2="29.6" width="0.5" layer="1"/>
+<wire x1="35.4" y1="29.6" x2="37.5" y2="27.5" width="0.5" layer="1"/>
+<contactref element="TP1" pad="1"/>
+<wire x1="44" y1="28" x2="43.55" y2="28" width="0.8" layer="1"/>
+<wire x1="43.55" y1="28" x2="40.5" y2="24.95" width="0.8" layer="1"/>
+<wire x1="37.5" y1="27.5" x2="37.5" y2="25" width="0.8" layer="1"/>
+<wire x1="37.5" y1="25" x2="37.5" y2="24.95" width="0.8" layer="1"/>
+<wire x1="37.5" y1="24.95" x2="37.55" y2="24.95" width="0.8" layer="1"/>
+<wire x1="37.55" y1="24.95" x2="40.5" y2="24.95" width="0.8" layer="1"/>
+<wire x1="37.55" y1="24.95" x2="37.5" y2="25" width="0.8" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="U1" pad="GND"/>
@@ -802,10 +777,11 @@ Combination of BAC and AC</description>
 <wire x1="10.159" y1="34.68" x2="13.41" y2="34.68" width="0.254" layer="1"/>
 </signal>
 <signal name="N$1">
-<contactref element="B1" pad="NEG"/>
 <contactref element="U2" pad="1"/>
-<wire x1="38.5" y1="14.398" x2="44.0028" y2="19.9008" width="0.8" layer="16"/>
-<wire x1="44.0028" y1="19.9008" x2="44.0028" y2="27.5" width="0.8" layer="16"/>
+<wire x1="44.0028" y1="19.9008" x2="38.5" y2="14.398" width="0.8" layer="16"/>
+<contactref element="TP3" pad="1"/>
+<wire x1="44" y1="20" x2="44.0028" y2="19.9972" width="0.8" layer="16"/>
+<wire x1="44.0028" y1="19.9972" x2="44.0028" y2="19.9008" width="0.8" layer="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

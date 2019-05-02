@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.2">
+<eagle version="9.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -2029,21 +2029,6 @@ A106146CT-ND or similar.</description>
 <smd name="1" x="0" y="0" dx="2.5" dy="1.625" layer="1"/>
 <text x="2.37" y="1.84" size="0.8128" layer="25" font="vector" rot="R180">&gt;NAME</text>
 </package>
-<package name="20MMCOINCELL">
-<hole x="-7.239" y="0" drill="3.556"/>
-<hole x="8.001" y="0" drill="3.556"/>
-<pad name="NEG" x="0" y="2.9972" drill="1.6256"/>
-<pad name="POS" x="-13.081" y="0" drill="1.6256"/>
-<wire x1="-4.572" y1="4.826" x2="4.318" y2="4.826" width="0.127" layer="21"/>
-<wire x1="4.318" y1="4.826" x2="4.318" y2="2.921" width="0.127" layer="21"/>
-<wire x1="4.318" y1="2.921" x2="11.303" y2="2.921" width="0.127" layer="21"/>
-<wire x1="11.303" y1="2.921" x2="11.303" y2="-2.667" width="0.127" layer="21"/>
-<wire x1="11.303" y1="-2.667" x2="-15.494" y2="-2.667" width="0.127" layer="21"/>
-<wire x1="-15.494" y1="-2.667" x2="-15.494" y2="2.794" width="0.127" layer="21"/>
-<wire x1="-15.494" y1="2.794" x2="-4.572" y2="2.794" width="0.127" layer="21"/>
-<wire x1="-4.572" y1="2.794" x2="-4.572" y2="4.826" width="0.127" layer="21"/>
-<text x="-14" y="4" size="0.7" layer="25" font="vector">&gt;NAME</text>
-</package>
 <package name="1101M2S3CQE2">
 <pad name="1" x="0" y="9.398" drill="2.286" diameter="2.794" shape="square"/>
 <pad name="2" x="0" y="4.699" drill="2.286" diameter="2.794"/>
@@ -2217,15 +2202,6 @@ A106146CT-ND or similar.</description>
 <wire x1="5.08" y1="-1.27" x2="5.08" y2="1.27" width="0.254" layer="94"/>
 <wire x1="5.08" y1="1.27" x2="2.54" y2="1.27" width="0.254" layer="94"/>
 <wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
-</symbol>
-<symbol name="20MMCOINCELL">
-<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
-<pin name="POS" x="0" y="5.08" visible="off" length="short" rot="R270"/>
-<pin name="NEG" x="0" y="-7.62" visible="off" length="short" rot="R90"/>
-<text x="-7.62" y="-7.62" size="3.2512" layer="95" font="vector" rot="R90">&gt;NAME</text>
 </symbol>
 <symbol name="SW1_IXI">
 <wire x1="5.08" y1="0" x2="-7.62" y2="0" width="0.1524" layer="94"/>
@@ -3334,23 +3310,6 @@ For A106146CT-ND or similar</description>
 <device name="THRU" package="TEST_POINT">
 <connects>
 <connect gate="G$1" pin="P$1" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="2020COINCELL" prefix="B">
-<description>https://www.digikey.com/product-detail/en/1065/36-1065-ND/278884?utm_campaign=buynow&amp;WT.z_cid=ref_octopart_dkc_buynow&amp;utm_medium=aggregator&amp;curr=usd&amp;site=us&amp;utm_source=octopart</description>
-<gates>
-<gate name="G$1" symbol="20MMCOINCELL" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="20MMCOINCELL">
-<connects>
-<connect gate="G$1" pin="NEG" pad="NEG"/>
-<connect gate="G$1" pin="POS" pad="POS"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6090,7 +6049,6 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <attribute name="SUBSYSTEM_NAME" value="Batt Test"/>
 </part>
 <part name="U1" library="scono" deviceset="PHOTON" device=""/>
-<part name="R1" library="scono" deviceset="R-US_" device="R0603" value="10R"/>
 <part name="SUPPLY1" library="scono" deviceset="GND" device=""/>
 <part name="D1" library="scono" deviceset="LED" device="0603" value="RED"/>
 <part name="D3" library="scono" deviceset="LED" device="0603" value="BLUE"/>
@@ -6107,10 +6065,12 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <part name="B-" library="scono" deviceset="TEST_POINT" device=""/>
 <part name="POS" library="scono" deviceset="TEST_POINT" device=""/>
 <part name="SUPPLY4" library="scono" deviceset="GND" device=""/>
-<part name="B1" library="scono" deviceset="2020COINCELL" device=""/>
 <part name="U2" library="scono" deviceset="1101M2S3CQE2" device=""/>
 <part name="B+" library="scono" deviceset="TEST_POINT" device="THRU"/>
 <part name="TP2" library="scono" deviceset="TEST_POINT" device="THRU"/>
+<part name="R1" library="scono" deviceset="R-US_" device="R0805" value="10R"/>
+<part name="TP1" library="scono" deviceset="TEST_POINT" device="THRU"/>
+<part name="TP3" library="scono" deviceset="TEST_POINT" device="THRU"/>
 </parts>
 <sheets>
 <sheet>
@@ -6128,10 +6088,6 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 </instance>
 <instance part="U1" gate="G$1" x="116.84" y="106.68" smashed="yes">
 <attribute name="NAME" x="106.68" y="124.46" size="1.778" layer="95" font="vector" ratio="7" align="top-left"/>
-</instance>
-<instance part="R1" gate="G$1" x="99.06" y="99.06" smashed="yes">
-<attribute name="NAME" x="93.98" y="100.33" size="1.016" layer="95"/>
-<attribute name="VALUE" x="93.98" y="97.79" size="1.016" layer="96" align="top-left"/>
 </instance>
 <instance part="SUPPLY1" gate="GND" x="132.08" y="106.68" smashed="yes" rot="R90">
 <attribute name="VALUE" x="134.62" y="105.41" size="1.016" layer="96" rot="R90"/>
@@ -6191,9 +6147,6 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <instance part="SUPPLY4" gate="GND" x="58.42" y="81.28" smashed="yes" rot="R90">
 <attribute name="VALUE" x="60.96" y="80.01" size="1.016" layer="96" rot="R90"/>
 </instance>
-<instance part="B1" gate="G$1" x="81.28" y="88.9" smashed="yes">
-<attribute name="NAME" x="73.66" y="81.28" size="3.2512" layer="95" font="vector" rot="R90"/>
-</instance>
 <instance part="U2" gate="A" x="68.58" y="58.42" smashed="yes">
 <attribute name="NAME" x="61.3156" y="72.6186" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="60.6806" y="42.1386" size="2.0828" layer="96" ratio="6" rot="SR0"/>
@@ -6204,19 +6157,30 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <instance part="TP2" gate="G$1" x="55.88" y="81.28" smashed="yes" rot="R180">
 <attribute name="NAME" x="55.88" y="78.74" size="1.778" layer="104" rot="R180"/>
 </instance>
+<instance part="R1" gate="G$1" x="99.06" y="99.06" smashed="yes">
+<attribute name="NAME" x="93.98" y="100.33" size="1.016" layer="95"/>
+<attribute name="VALUE" x="93.98" y="97.79" size="1.016" layer="96" align="top-left"/>
+</instance>
+<instance part="TP1" gate="G$1" x="81.28" y="96.52" smashed="yes" rot="R180">
+<attribute name="NAME" x="81.28" y="93.98" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="TP3" gate="G$1" x="81.28" y="81.28" smashed="yes" rot="R180">
+<attribute name="NAME" x="81.28" y="78.74" size="1.778" layer="95" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="B-" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="U1" gate="G$1" pin="A5"/>
 <wire x1="101.6" y1="99.06" x2="104.14" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="DAC"/>
 <wire x1="101.6" y1="99.06" x2="101.6" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="101.6" x2="104.14" y2="101.6" width="0.1524" layer="91"/>
 <label x="99.06" y="101.6" size="1.778" layer="95"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<junction x="101.6" y="99.06"/>
 </segment>
 <segment>
 <pinref part="B-" gate="G$1" pin="P$1"/>
@@ -6226,15 +6190,14 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 </net>
 <net name="B+" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="99.06" x2="93.98" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="A3"/>
-<wire x1="93.98" y1="96.52" x2="93.98" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="93.98" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="91"/>
 <label x="96.52" y="93.98" size="1.778" layer="95"/>
 <wire x1="93.98" y1="96.52" x2="81.28" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="96.52" x2="81.28" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="B1" gate="G$1" pin="POS"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="96.52" x2="93.98" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="A2"/>
+<wire x1="93.98" y1="91.44" x2="104.14" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="TP1" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="POS" gate="G$1" pin="P$1"/>
@@ -6367,10 +6330,10 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="B1" gate="G$1" pin="NEG"/>
 <wire x1="81.28" y1="63.5" x2="81.28" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="U2" gate="A" pin="1"/>
 <wire x1="81.28" y1="63.5" x2="78.74" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="TP3" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 </nets>
