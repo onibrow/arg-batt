@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.0">
+<eagle version="9.5.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -203,12 +203,12 @@
 <text x="7" y="9.5" size="1" layer="21" font="vector" rot="R90">Arias Research Group
 Board Design - S. Ono
 Battery Testing Board</text>
-<text x="18" y="41.5" size="1" layer="21" font="vector" rot="SR180" align="bottom-center">POS</text>
+<text x="15.5" y="41.5" size="1" layer="21" font="vector" rot="SR180" align="bottom-center">B+</text>
 <text x="26" y="41.5" size="1" layer="21" font="vector" rot="SR180" align="bottom-center">GND</text>
-<wire x1="16" y1="44" x2="16" y2="40" width="0.254" layer="21"/>
-<wire x1="16" y1="40" x2="20" y2="40" width="0.254" layer="21"/>
-<wire x1="20" y1="40" x2="20" y2="44" width="0.254" layer="21"/>
-<wire x1="20" y1="44" x2="16" y2="44" width="0.254" layer="21"/>
+<wire x1="13.5" y1="44" x2="13.5" y2="40" width="0.254" layer="21"/>
+<wire x1="13.5" y1="40" x2="17.5" y2="40" width="0.254" layer="21"/>
+<wire x1="17.5" y1="40" x2="17.5" y2="44" width="0.254" layer="21"/>
+<wire x1="17.5" y1="44" x2="13.5" y2="44" width="0.254" layer="21"/>
 <wire x1="24" y1="44" x2="28" y2="44" width="0.254" layer="21"/>
 <wire x1="28" y1="44" x2="28" y2="40" width="0.254" layer="21"/>
 <wire x1="28" y1="40" x2="24" y2="40" width="0.254" layer="21"/>
@@ -217,6 +217,11 @@ Battery Testing Board</text>
 <text x="43.5" y="6" size="1" layer="21" font="vector" rot="R90">OFF</text>
 <text x="49" y="26" size="1.778" layer="21" font="vector" rot="R90">POS</text>
 <text x="49" y="18" size="1.778" layer="21" font="vector" rot="R90">NEG</text>
+<text x="20.5" y="41.5" size="1" layer="21" rot="SR180" align="bottom-center">B-</text>
+<wire x1="22.5" y1="44" x2="18.5" y2="44" width="0.254" layer="21"/>
+<wire x1="18.5" y1="44" x2="18.5" y2="40" width="0.254" layer="21"/>
+<wire x1="22.5" y1="40" x2="22.5" y2="44" width="0.254" layer="21"/>
+<wire x1="18.5" y1="40" x2="22.5" y2="40" width="0.254" layer="21"/>
 </plain>
 <libraries>
 <library name="scono">
@@ -630,7 +635,7 @@ Combination of BAC and AC</description>
 <attribute name="NAME" x="35.2234" y="9.064" size="1.27" layer="25" ratio="6" rot="SR0"/>
 <attribute name="VENDOR" value="C&amp;K" x="38.5" y="5" size="1.778" layer="27" display="off"/>
 </element>
-<element name="B+" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="18" y="43" smashed="yes"/>
+<element name="B+" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="15.5" y="43" smashed="yes"/>
 <element name="TP2" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="26" y="43" smashed="yes"/>
 <element name="R1" library="scono" package="R0805" value="10R" x="37.5" y="24" smashed="yes" rot="R270">
 <attribute name="NAME" x="38.77" y="25.27" size="1.27" layer="25" font="vector" ratio="10" rot="R270"/>
@@ -639,6 +644,7 @@ Combination of BAC and AC</description>
 </element>
 <element name="TP1" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="44" y="28" smashed="yes"/>
 <element name="TP3" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="44" y="20" smashed="yes"/>
+<element name="B-2" library="scono" package="TEST_POINT" value="TEST_POINTTHRU" x="20.5" y="43" smashed="yes"/>
 </elements>
 <signals>
 <signal name="B-">
@@ -651,14 +657,18 @@ Combination of BAC and AC</description>
 <contactref element="R1" pad="2"/>
 <wire x1="37.5" y1="23.05" x2="37.44" y2="22.99" width="0.8" layer="1"/>
 <wire x1="37.44" y1="22.99" x2="37.44" y2="19.44" width="0.8" layer="1"/>
+<contactref element="B-2" pad="1"/>
+<wire x1="20.5" y1="43" x2="20.5" y2="27" width="0.5" layer="16"/>
+<wire x1="28.06" y1="19.44" x2="31.19" y2="19.44" width="0.5" layer="16"/>
+<wire x1="20.5" y1="27" x2="28.06" y2="19.44" width="0.5" layer="16"/>
 </signal>
 <signal name="B+">
 <contactref element="POS" pad="1"/>
 <contactref element="B+" pad="1"/>
-<wire x1="18" y1="43" x2="18" y2="35.5" width="0.5" layer="1"/>
+<wire x1="15.5" y1="43" x2="15.5" y2="38" width="0.5" layer="1"/>
 <contactref element="R1" pad="1"/>
 <contactref element="U1" pad="A2"/>
-<wire x1="18" y1="35.5" x2="23.9" y2="29.6" width="0.5" layer="1"/>
+<wire x1="15.5" y1="38" x2="23.9" y2="29.6" width="0.5" layer="1"/>
 <wire x1="23.9" y1="29.6" x2="31.19" y2="29.6" width="0.5" layer="1"/>
 <wire x1="31.19" y1="29.6" x2="35.4" y2="29.6" width="0.5" layer="1"/>
 <wire x1="35.4" y1="29.6" x2="37.5" y2="27.5" width="0.5" layer="1"/>

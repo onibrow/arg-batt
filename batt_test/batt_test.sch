@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.0">
+<eagle version="9.5.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -6071,6 +6071,7 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <part name="R1" library="scono" deviceset="R-US_" device="R0805" value="10R"/>
 <part name="TP1" library="scono" deviceset="TEST_POINT" device="THRU"/>
 <part name="TP3" library="scono" deviceset="TEST_POINT" device="THRU"/>
+<part name="B-2" library="scono" deviceset="TEST_POINT" device="THRU"/>
 </parts>
 <sheets>
 <sheet>
@@ -6167,6 +6168,9 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <instance part="TP3" gate="G$1" x="81.28" y="81.28" smashed="yes" rot="R180">
 <attribute name="NAME" x="81.28" y="78.74" size="1.778" layer="95" rot="R180"/>
 </instance>
+<instance part="B-2" gate="G$1" x="55.88" y="96.52" smashed="yes" rot="R180">
+<attribute name="NAME" x="55.88" y="93.98" size="1.778" layer="104" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6186,6 +6190,11 @@ Source: http://www.vishay.com .. dcrcw.pdf</description>
 <pinref part="B-" gate="G$1" pin="P$1"/>
 <wire x1="86.36" y1="127" x2="86.36" y2="116.84" width="0.1524" layer="91"/>
 <label x="86.36" y="114.3" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="B-2" gate="G$1" pin="P$1"/>
+<wire x1="55.88" y1="96.52" x2="58.42" y2="96.52" width="0.1524" layer="91"/>
+<label x="58.42" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="B+" class="0">
