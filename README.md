@@ -2,10 +2,43 @@
 
 ### Seiya Ono Sp'19
 
-TODO: 
-* Move up Photon to edge of board
-* Add a switch to disconnect the battery
-* Get documentation (email) and get IDE up to flash
+## Overview
+
+The board was designed such that the Photon could both drive and discharge the battery cell attached. The battery load resistor was chosen to be 0805 SMD so it could potentially be upgraded to handle higher discharges. Other than that, there are redundant connectors coming off so the user can access needed pins in different ways. The board also features two exposed test pads to probe the resistance of the load resistor precisely, given the user measures it before soldering on the Photon.
+
+The pins below the Photon as well as the battery connection pins are meant for test points. The slide switch can disconnect the battery from the circuit as to not discharge when unnecessary. There are 5 indicator LEDs on the side that can be programmed by the user.
+
+The BOM can be found as `bom.csv` and includes the parts used to populate the board.
+
+### Resistor Selection
+
+The [10 Ohm Resistor](https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RNCF0805AKT10R0/RNCF0805AKT10R0CT-ND/4250701) was chosen by searching through Digikey with [these filters](https://www.digikey.com/products/en/resistors/chip-resistor-surface-mount/52?k=&pkeyword=&sv=0&pv7=2&pv1989=0&pv3=651&pv3=667&pv3=696&pv16=39329&pv1127=i2&sf=1&FV=-8%7C52&quantity=&ColumnSort=0&page=1&stock=1&nstock=1&photo=1&pageSize=50) enabled.
+
+If that link somehow is broken, the filters are as follows:
+
+`Product Index > Resistors > Chip Resistor > Surface Mount`
+
+Part Status: Active
+
+Package / Case: 0805
+
+Packaging: Cut Tape
+
+Tolerance: 0.01%, 0.02%, 0.05%
+
+Number of Terminations: 2
+
+In stock: Checked
+
+Normally Stocking: Checked
+
+Photo: Checked
+
+## Tips
+
+When soldering, start with the smallest components, as they are the hardest to solder. Then move to the test points and slide switch, then the Photon. When soldering the Photon, make sure it is aligned well so that all the pads have enough room to contact the castelated board.
+
+## Specifications
 
 From Dr. Evans:
 
@@ -13,7 +46,8 @@ Idea is to carry out multi-cycle testing of a Panasonic coin cell (about 3 milli
 
 ![spec](img/spec.png)
 
-Tasks
+### Task
+
 1. Build present design but with soldered connections. Two Photons without header pins should be here by next week. We have cell holders and cells.
 1. Set up the Photons and load code (I will supply).
 1. Run a couple of cells to 3 million cycles or failure, collecting data.
@@ -28,3 +62,4 @@ Useful Links:
 * External power - through maybe a barrel jack to provide external power to the entire board, so that the photon's uUSB isn't stressed
 * Push buttons for Photon configuration - allows external user to set up and start different testing procedures
 * Accurate ammeter for measuring current.
+* Instead of having a soldered on resistor, can use [SIP Sockets](https://www.digikey.com/product-detail/en/mill-max-manufacturing-corp/346-43-102-41-013000/ED6464-02-ND/1212288) to make impermanent connections with precision through hole resistors. This way, they can be swapped in and out for future proofing.
